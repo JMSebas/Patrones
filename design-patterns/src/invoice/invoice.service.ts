@@ -6,14 +6,21 @@ import { CreateInvoiceDto } from './dto/create-invoice.dto';
 import { UpdateInvoiceDto } from './dto/update-invoice.dto';
 
 import { Invoice } from './entities/invoice.entity';
-
+import { PaymentMethod } from './payment-methods/payment-method.interface';
+import { PaymentMethodFactory } from './payment-methods/payment-method.factory';
 @Injectable()
 export class InvoiceService {
 
   constructor(
     @InjectRepository(Invoice)
-    private readonly invoiceRepository: Repository<Invoice>,
+    private readonly invoiceRepository: Repository<Invoice>, 
+    private readonly paymentMethodFactory: PaymentMethodFactory,
   ) { }
+
+  processPayment(methodType: string, amount: number): void {
+    const paymentMethod: PaymentMethod = this.paymentMethodFactory.createPaymentMethod(methodType);
+    paymentMethod.pay(amount);
+  }
 
   async create(createInvoiceDto: CreateInvoiceDto) {
     const newInvoice = this.invoiceRepository.create({
