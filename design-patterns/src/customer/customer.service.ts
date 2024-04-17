@@ -4,13 +4,17 @@ import { UpdateCustomerDto } from './dto/update-customer.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Customer } from './entities/customer.entity';
+import { SingletonExample } from 'src/shared/singleton-example';
 @Injectable()
 export class CustomerService {
+  private singletonInstance: SingletonExample;
 
   constructor(
     @InjectRepository(Customer)
     private readonly customerRepository: Repository<Customer>
-  ){}
+  ){ 
+    this.singletonInstance = SingletonExample.getInstance();
+  }
 
   async create(createCustomerDto: CreateCustomerDto) {
     const newCustomer = this.customerRepository.create(createCustomerDto);
