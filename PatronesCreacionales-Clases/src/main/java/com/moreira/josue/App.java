@@ -1,4 +1,5 @@
 package com.moreira.josue;
+import com.moreira.josue.Builder.Empleado;
 import com.moreira.josue.Singleton.Student;
 
 /**
@@ -16,5 +17,8 @@ public class App
         System.out.println("**************************************************");
         Student studentB = Student.getSingletonInstance("Maria ", "Guerra", "Facultad de Ingenieria");
 //        System.out.println(studentB.toString());
+
+
+        Empleado empleado = new Empleado();
     }
 }
