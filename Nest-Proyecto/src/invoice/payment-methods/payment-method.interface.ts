@@ -1,5 +1,5 @@
-export interface PaymentMethod {
-    pay(amount: number): void;
-  }
+// export interface PaymentMethod {
+//     pay(amount: number): void;
+//   }
 
   

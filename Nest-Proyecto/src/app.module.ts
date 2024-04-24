@@ -5,8 +5,10 @@ import { CustomerModule } from './customer/customer.module';
 import { InvoiceModule } from './invoice/invoice.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { InvoiceDetailModule } from './invoice-detail/invoice-detail.module';
+import { SingletonExample } from './shared/singleton-example';
 
 @Module({
+  
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
@@ -24,4 +26,6 @@ import { InvoiceDetailModule } from './invoice-detail/invoice-detail.module';
   controllers: [AppController],
   providers: [AppService],
 })
+
+
 export class AppModule {}
