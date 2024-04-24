@@ -1,6 +1,5 @@
 package com.moreira.josue;
-import com.moreira.josue.Builder.Empleado;
-import com.moreira.josue.Singleton.Student;
+import com.moreira.josue.PatronesCreacionales.Builder.Empleado;
 
 /**
  * Hello world!

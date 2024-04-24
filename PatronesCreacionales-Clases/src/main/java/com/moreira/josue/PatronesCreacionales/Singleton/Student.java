@@ -1,4 +1,4 @@
-package com.moreira.josue.Singleton;
+package com.moreira.josue.PatronesCreacionales.Singleton;
 
 public class Student {
     private String name;

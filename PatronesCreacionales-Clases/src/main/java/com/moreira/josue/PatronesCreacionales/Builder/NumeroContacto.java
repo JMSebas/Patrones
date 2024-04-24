@@ -1,4 +1,4 @@
-package com.moreira.josue.Builder;
+package com.moreira.josue.PatronesCreacionales.Builder;
 
 public class NumeroContacto {
     private String nroCelular;

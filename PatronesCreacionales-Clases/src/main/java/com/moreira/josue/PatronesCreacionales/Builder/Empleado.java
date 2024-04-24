@@ -1,6 +1,6 @@
-package com.moreira.josue.Builder;
+package com.moreira.josue.PatronesCreacionales.Builder;
 
-import com.moreira.josue.Builder.interfaces.BuilderInterface;
+import com.moreira.josue.PatronesCreacionales.Builder.interfaces.BuilderInterface;
 
 import java.util.ArrayList;
 import java.util.List;

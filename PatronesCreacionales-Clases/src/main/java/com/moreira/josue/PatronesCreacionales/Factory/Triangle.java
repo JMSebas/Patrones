@@ -1,4 +1,4 @@
-package com.moreira.josue.Factory;
+package com.moreira.josue.PatronesCreacionales.Factory;
 
 public class Triangle implements Figure{
     @Override
