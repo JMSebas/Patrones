@@ -63,18 +63,24 @@ public class Empleado {
             this.direccion = direccion;
             return this;
         }
-        public EmpleadoBuilder setNumeros(List<NumeroContacto> numeros) {
-            this.numeros = numeros;
-            return this;
-        }
 
-        public EmpleadoBuilder setContactos(List<Contactos> contactos) {
-            this.contactos = contactos;
+        public EmpleadoBuilder setDireccion(String direccion, String ciudad, String codigoPostal){
+            this.direccion = new Direccion(direccion, ciudad, codigoPostal);
             return this;
+
         }
+//        public EmpleadoBuilder setNumeros(List<NumeroContacto> numeros) {
+//            this.numeros = numeros;
+//            return this;
+//        }
+//
+//        public EmpleadoBuilder setContactos(List<Contactos> contactos) {
+//            this.contactos = contactos;
+//            return this;
+//        }
          @Override
          public Empleado build() {
-             return new Empleado();
+             return new Empleado(nombre, apellido, edad, genero, direccion, numeros, contactos);
          }
     }
 
@@ -116,5 +122,20 @@ public class Empleado {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", edad=" + edad +
+                ", genero='" + genero + '\'' +
+                ", direccion=" + direccion +
+                ", numeros=" + numeros +
+                ", contactos=" + contactos +
+                '}';
     }
 }

@@ -39,4 +39,12 @@ public class Direccion {
         this.codigoPostal = codigoPostal;
     }
 
+    @Override
+    public String toString() {
+        return "Direccion{" +
+                "direccion='" + direccion + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", codigoPostal='" + codigoPostal + '\'' +
+                '}';
+    }
 }
